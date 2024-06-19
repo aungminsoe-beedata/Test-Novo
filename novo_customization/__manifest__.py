@@ -18,7 +18,7 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product','hr','hr_payroll','sale_management','stock'],
+    'depends': ['base','product','hr','hr_payroll','account','account_accountant','point_of_sale'],
 
     # always loaded
     'data': [
@@ -29,13 +29,9 @@ Long description of module's purpose
         'views/payslip.xml',
         'views/report_payslip_template.xml',
         'views/paper_format.xml',
-        
-        
-        'security/security.xml',
-        'views/menuitems_view.xml',
-        'views/sales_order_action_inherit.xml',
-      
-       
+        'views/sales_invoice.xml',
+        'views/sales_invoice_template.xml',
+        'views/pos_invoice.xml'
     ],
 
     # only loaded in demonstration mode
