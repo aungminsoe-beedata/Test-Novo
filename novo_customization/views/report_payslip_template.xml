@@ -1,0 +1,103 @@
+<odoo>
+    <data>
+
+        <template id="report_template" inherit_id='hr_payroll.report_payslip'>
+            <xpath expr="(//div[@class='page'])" position="replace">
+                <div class="page">
+                    <table class="table table-bordered" style='border : 2px solid; width : 100%;'>
+                            <thead>
+                                <tr>
+                                    <td colspan = '5' style='text-align : center; font-size : 18px;'>Patina Myanmar Co.,ltd<br/>PAY SLIP</td>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> Employee </td>
+                                    <td style='width : 25%;'> </td>
+                                    <td colspan='2'>Pay Period Begins :</td>
+                                    <td style='width : 25%;'> </td>
+                                </tr>
+                                <tr>
+                                    <td>Department </td>
+                                    <td></td>
+                                    <td colspan = '2'>Pay Period Ends :</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan ='2' style='text-align : center; background-color: #b6b2b1;'>EARNINGS</td>
+                                    <td colspan ='3' style='text-align : center; background-color: #b6b2b1;'>DEDUCTIONS</td>
+                                </tr>
+                                <tr>
+                                    <td> Basic Salary </td>
+                                    <td></td>
+                                    <td> Fine </td>
+                                    <td style='width : 10%;'></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Bonus </td>
+                                    <td></td>
+                                    <td> Advance Taken </td>
+                                    <td style='width : 10%;'></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td> OT </td>
+                                    <td></td>
+                                    <td> Absence </td>
+                                    <td style='width : 10%;'></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Other </td>
+                                    <td></td>
+                                    <td> Late </td>
+                                    <td style='width : 10%;'></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Allocation </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style='width : 10%;'></td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan ='2' style='text-align : center;'>&#8203;</td>
+                                    <td colspan ='3' style='text-align : center;'>&#8203;</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Pay Date </td>
+                                    <td></td>
+                                    <td rowspan = '2' style='text-align : center; vertical-align: middle;'>Net Pay</td>
+                                    <td rowspan = '2' colspan='2'></td>
+                                </tr>
+                                <tr>
+                                    <td>Method</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan='5'>&#8203; <br/> &#8203;</td>
+                                </tr>
+
+
+                            </tbody>
+                
+                    </table>
+                </div>
+        
+            </xpath>
+        </template>
+
+        <record id="hr_payroll.action_report_payslip" model="ir.actions.report">
+            <field name="paperformat_id" ref="paper_format"/>
+        </record>
+    </data>
+</odoo>
