@@ -2,4 +2,6 @@
 
 from . import models
 from . import product
-from . import pos_session
+from . import sale_quotation_name_change
+
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <!-- sale order of quotation restract by user group permission-->
+        <record id="sale.menu_sale_quotations" model="ir.ui.menu">
+            <field name="groups_id" eval="[(5,ref('sale_quotation_menuitem_hide'))]"/>
+        </record>
+        <menuitem id="sale.menu_sale_quotations"
+                 name="Quotation"   
+                  parent="sale.sale_order_menu" sequence="1"
+                  groups="sale_quotation_menuitem_hide"
+                  />
+    <!-- sale order of quotation restract by user group permission End-->
+     
+        <record id="view_order_form_inherited" model="ir.ui.view">
+            <field name="name">sale.order.form.inherited</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                
+<!-- Use XPath to find and remove the "Send By Email" button (Start) --><!-- hide send by email button-->
+                <xpath expr="//button[@name='action_quotation_send']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath><!-- hide send by email button-->
+
+<!-- Name change (Sent To Quotation To Sent To Draft) Start-->
+                <xpath expr="//button[@name='action_draft']" position="attributes">
+                    <attribute name="string">Sent To Draft</attribute>
+                </xpath>
+<!-- Name change (Sent To Quotation To Sent To Draft) End-->
+
+<!-- Name change ( Quotation to Draft )  sale.order form view  Start-->
+            <field name="state" position="attributes">
+                <attribute name="widget">statusbar</attribute>
+                <attribute name="options">{'clickable': 'true'}</attribute>
+            </field>
+<!-- Name change ( Quotation to Draft )  sale.order form view      End-->
+
+            </field>
+        </record>
+    </data>
+</odoo>
